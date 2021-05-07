@@ -1,5 +1,5 @@
 # Prueba de Desarrollo
-## Instrucciones: 
+## Instrucciones 
 
 Mediante el uso de Laravel y MySQL, desarrollar una aplicación que permita la administración de un catálogo de productos.
 
