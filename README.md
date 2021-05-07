@@ -33,3 +33,11 @@ Debe contener la siguiente información y características:
 Debe entregarse los archivos fuente (html, js, css, etc.), puede hacerse mediante acceso a un repositorio o un zip al correo.
 
 En caso de hacer uso de alguna librería o algún desarrollo previo, por favor comunicarlo e indicarn qué ayuda le prestó en el momento de la programación y la forma en que lo asoció a esta prueba.
+
+# Instalacion:
+
+* Clonar el repositorio
+* Configurar el archivo .env con la configuracion de la base de datos
+* Ejecutar las migraciones: php artisan migrate
+* Ejecutar composer para las dependecias de php: composer install
+* Ejecutar NPM para las dependencias de Javascrypt: npm install && npm run dev
