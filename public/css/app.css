@@ -1,3 +1,12 @@
 .logo-app {
   height: inherit !important;
 }
+
+.img-brand {
+  width: 100px;
+  height: auto;
+}
+
+td {
+  vertical-align: middle !important;
+}

@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('header_title', 'Marcas')
-@section('header_sub_title', 'Listado de Marcas')
+@section('header_title', 'Productos')
+@section('header_sub_title', 'Listado de Productos')
 @section('content')
 <div class="row mx-5">
     <div class="content">
@@ -14,16 +14,26 @@
                     <tr>
                         <th>Imagen</th>
                         <th>Nombre</th>
+                        <th>Talla</th>
+                        <th>Observaciones</th>
+                        <th>Marca</th>
+                        <th>Cantidad</th>
+                        <th>Fecha de Embarque</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                @foreach($brands as $brand)
+                @foreach($products as $product)
                     <tr>
                         <td>
-                            <img class="img-brand" src="{{asset('img/brands/'.$brand->url_image)}}" alt="{{$brand->name}}">
+                            <img class="img-brand" src="{{asset('img/products/'.$product->url_image)}}" alt="{{$product->name}}">
                         </td>
-                        <td>{{$brand->name}}</td>
+                        <td>{{$product->name}}</td>
+                        <td>{{$product->size}}</td>
+                        <td>{{$product->observations}}</td>
+                        <td>{{$product->marca}}</td>
+                        <td>{{$product->stock}}</td>
+                        <td>{{$product->boarding_date}}</td>
                         <td>
                         <a href="" class="btn btn-warning"><i class="fa fa-edit"></i></a>
                         <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>

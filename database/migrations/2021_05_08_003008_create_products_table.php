@@ -18,9 +18,9 @@ class CreateProductsTable extends Migration
             $table->integer('brand_id');
             $table->string('name');
             $table->integer('size');
-            $table->string('observaciones');
+            $table->string('observations');
             $table->integer('stock');
-            $table->date('bording_date');
+            $table->date('boarding_date');
             $table->string('url_image');
             $table->softDeletes();
             $table->timestamps();

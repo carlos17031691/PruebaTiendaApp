@@ -19,7 +19,13 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+    
+    //Rutas para administración de Marcas
     Route::get('brands', [App\Http\Controllers\BrandController::class, 'index'])->name('brands.index');
+    Route::get('brands/create', [App\Http\Controllers\BrandController::class, 'create'])->name('brands.create');
+
+    //Rutas para administración de Productos
+    Route::get('products', [App\Http\Controllers\ProductController::class, 'index'])->name('products.index');
 });
 
 

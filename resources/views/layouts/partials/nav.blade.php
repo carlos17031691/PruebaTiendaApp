@@ -1,7 +1,7 @@
 <header class="main-header">
             <!-- Logo -->
             <a href="" class="logo">
-                <img src="img/logo-tiendapp.png" alt="logo tiendApp" class="logo-app">
+                <img src="/img/logo-tiendapp.png" alt="logo tiendApp" class="logo-app">
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
@@ -16,13 +16,13 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="img/default-user.png" class="user-image" alt="User Image">
+                        <img src="/img/default-user.png" class="user-image" alt="User Image">
                         <span class="hidden-xs">{{ Auth::user()->name}}</span>
                         </a>
                         <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="img/default-user.png" class="img-circle" alt="User Image">
+                            <img src="{{asset('img/default-user.png')}}" class="img-circle" alt="User Image">
 
                             <p>
                             {{ Auth::user()->name}}
@@ -38,14 +38,6 @@
                                                     this.closest('form').submit();">Cerrar Sesió</a>
                                 </form>
                             </div>
-
-                            
-
-                                
-                            
-
-
-
                         </li>
                         </ul>
                     </li>
