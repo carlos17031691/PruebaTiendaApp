@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <link rel="stylesheet" type="text/css" href="plugins/DataTables/datatables.min.css"/>
     <link rel="stylesheet" href="css/app.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,7 +46,7 @@
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> -->
     </head>
 
-    <body class="hold-transition skin-blue">
+    <body class="hold-transition skin-black-light">
     <div class="wrapper">
         @include('layouts.partials.nav')
         @include('layouts.partials.menu')
@@ -102,6 +103,7 @@
         <script src="bower_components/fastclick/lib/fastclick.js"></script>
         <!-- AdminLTE App -->
         <script src="dist/js/adminlte.min.js"></script>
-
+        <script type="text/javascript" src="plugins/DataTables/datatables.min.js"></script>
+        @yield('aditionals_scripts')
     </body>
 </html>

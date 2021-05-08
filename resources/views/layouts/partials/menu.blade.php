@@ -9,7 +9,7 @@
         <li class="header">Menu Principal</li>
         
         <li class="active">
-          <a href="">
+          <a href="{{route('brands.index')}}">
             <i class="fa fa-tags"></i> <span>Marcas</span>
             
           </a>
