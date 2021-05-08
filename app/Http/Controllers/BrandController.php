@@ -10,7 +10,7 @@ Use Alert;
 class BrandController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Mustra el listado de las marcas registradas.
      *
      * @return \Illuminate\Http\Response
      */
@@ -22,7 +22,7 @@ class BrandController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Muestra el formulario para ingresar la información de la nueva marca.
      *
      * @return \Illuminate\Http\Response
      */
@@ -32,7 +32,7 @@ class BrandController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Almacena la información de la nueva marca a registrar.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -55,26 +55,17 @@ class BrandController extends Controller
         return redirect()->route('brands.index');
     }
 
+    
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
+     * Muestra el formulario para la edición de una marca existente
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        $brand = Brand::find($id);
+        return view('brand.edit', compact('brand'));
     }
 
     /**
@@ -86,7 +77,22 @@ class BrandController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $file = $request->file('image');
+        $brand = Brand::find($id);
+        $brand->name = $request->get('name');
+        if($file != null){
+            $pathOld = $brand->url_image;
+            $fileName = $file->getClientOriginalName();
+            $path = Storage::disk('public')->putFile(
+                'brands',
+                $file
+            );
+            $brand->url_image= $path;
+            Storage::disk('public')->delete($pathOld);
+        }
+        $brand->save();
+        Alert::success('Marca', 'Marca editada con exito');
+        return redirect()->route('brands.index');
     }
 
     /**
@@ -97,6 +103,9 @@ class BrandController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $brand = Brand::find($id);
+        $brand->delete();
+        Alert::success('Marca', 'Marca eliminada con exito');
+        return redirect()->route('brands.index');
     }
 }

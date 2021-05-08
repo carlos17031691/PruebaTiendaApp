@@ -25,8 +25,12 @@
                         </td>
                         <td>{{$brand->name}}</td>
                         <td>
-                        <a href="" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                        <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                        <a href="{{route('brands.edit',$brand->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-danger" onclick="deleteBrand({{$brand->id}},'{{$brand->name}}')"><i class="fa fa-trash"></i></a>
+                        <form id="delete-{{$brand->id}}" method="POST" action="{{route('brands.destroy', $brand->id)}}">
+                            @csrf
+                            @method('delete')
+                        </form>
                         </td>
                     </tr>
                 @endforeach    
@@ -47,5 +51,22 @@
             }
         );
     } );
+
+    function deleteBrand(id, name) {
+        var form = $('#delete-'+id)
+        Swal.fire({
+            title: 'Eliminar Marca',
+            text: "¿Seguro que desea eliminar: " + name + "?.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Eliminar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                form.submit()
+            } 
+        })
+    }
 </script>
 @endsection

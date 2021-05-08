@@ -7,6 +7,11 @@
   height: auto;
 }
 
+.img-brand-edit {
+  width: 300px;
+  height: auto;
+}
+
 td {
   vertical-align: middle !important;
 }

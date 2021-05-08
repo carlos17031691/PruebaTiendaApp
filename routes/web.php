@@ -24,6 +24,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('brands', [App\Http\Controllers\BrandController::class, 'index'])->name('brands.index');
     Route::get('brands/create', [App\Http\Controllers\BrandController::class, 'create'])->name('brands.create');
     Route::post('brands', [App\Http\Controllers\BrandController::class, 'store'])->name('brands.store');
+    Route::get('brands/{id}', [App\Http\Controllers\BrandController::class, 'edit'])->name('brands.edit');
+    Route::post('brands/{id}', [App\Http\Controllers\BrandController::class, 'update'])->name('brands.update');
+    Route::delete('brands/{id}', [App\Http\Controllers\BrandController::class, 'destroy'])->name('brands.destroy');
 
     //Rutas para administración de Productos
     Route::get('products', [App\Http\Controllers\ProductController::class, 'index'])->name('products.index');
