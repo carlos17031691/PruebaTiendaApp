@@ -54,7 +54,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        @yield('header_tilte')
+        @yield('header_title')
         <small>@yield('header_sub_title')</small>
       </h1>
     </section>
