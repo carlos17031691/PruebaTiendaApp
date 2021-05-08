@@ -48,6 +48,7 @@
 
     <body class="hold-transition skin-black">
     <div class="wrapper">
+        @include('sweetalert::alert')
         @include('layouts.partials.nav')
         @include('layouts.partials.menu')
         <!-- Content Wrapper. Contains page content -->

@@ -15,7 +15,7 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->integer('brand_id');
+            $table->integer('brand_id')->unsigned()->index();
             $table->string('name');
             $table->integer('size');
             $table->string('observations');
@@ -24,6 +24,11 @@ class CreateProductsTable extends Migration
             $table->string('url_image');
             $table->softDeletes();
             $table->timestamps();
+
+            $table->foreign('brand_id')
+                  ->references('id')
+                  ->on('brands')
+                  ->onDelete('cascade');
         });
     }
 

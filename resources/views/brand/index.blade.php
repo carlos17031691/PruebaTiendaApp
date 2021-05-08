@@ -21,7 +21,7 @@
                 @foreach($brands as $brand)
                     <tr>
                         <td>
-                            <img class="img-brand" src="{{asset('img/brands/'.$brand->url_image)}}" alt="{{$brand->name}}">
+                            <img class="img-brand" src="{{asset('storage/'.$brand->url_image)}}" alt="{{$brand->name}}">
                         </td>
                         <td>{{$brand->name}}</td>
                         <td>

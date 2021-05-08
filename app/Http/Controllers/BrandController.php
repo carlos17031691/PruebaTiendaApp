@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Brand;
+use Illuminate\Support\Facades\Storage;
+Use Alert;
 
 class BrandController extends Controller
 {
@@ -37,7 +39,20 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $file = $request->file('image');
+        $brand = new Brand();
+        $brand->name = $request->get('name');
+        if($file != null){
+            $fileName = $file->getClientOriginalName();
+            $path = Storage::disk('public')->putFile(
+                'brands',
+                $file
+            );
+            $brand->url_image= $path;
+        }
+        $brand->save();
+        Alert::success('Marca', 'Marca registrada con exito');
+        return redirect()->route('brands.index');
     }
 
     /**
