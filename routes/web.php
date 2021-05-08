@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth'])->group(function () {
+    //Rutas generales
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
     
     //Rutas para administración de Marcas
@@ -30,6 +31,12 @@ Route::middleware(['auth'])->group(function () {
 
     //Rutas para administración de Productos
     Route::get('products', [App\Http\Controllers\ProductController::class, 'index'])->name('products.index');
+    Route::get('products/create', [App\Http\Controllers\ProductController::class, 'create'])->name('products.create');
+    Route::post('products', [App\Http\Controllers\ProductController::class, 'store'])->name('products.store');
+    Route::get('products/{id}', [App\Http\Controllers\ProductController::class, 'edit'])->name('products.edit');
+    Route::post('products/{id}', [App\Http\Controllers\ProductController::class, 'update'])->name('products.update');
+    Route::delete('products/{id}', [App\Http\Controllers\ProductController::class, 'destroy'])->name('products.destroy');
+
 });
 
 

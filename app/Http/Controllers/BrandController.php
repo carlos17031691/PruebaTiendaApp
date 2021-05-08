@@ -69,7 +69,7 @@ class BrandController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualiza la información de la marca.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -96,7 +96,7 @@ class BrandController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Elimina (desactiva a nivel visual) la marca seleccionada
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

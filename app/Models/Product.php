@@ -11,4 +11,8 @@ class Product extends Model
     use HasFactory, SoftDeletes;
     
     protected $dates = ['deleted_at'];
+
+    function brand(){
+        return $this->belongsTo(Brand::class);
+    }
 }

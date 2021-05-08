@@ -6,10 +6,10 @@
     <div class="content">
     <div class="box box-info">
         <div class="box-header">
-    <a href="{{route('brands.create')}}" class="btn btn-primary">Agregar</a>
+    <a href="{{route('products.create')}}" class="btn btn-primary">Agregar</a>
         </div>
         <div class="box-body">
-            <table id="brands" class="table responsive">
+            <table id="products" class="table responsive">
                 <thead>
                     <tr>
                         <th>Imagen</th>
@@ -26,17 +26,33 @@
                 @foreach($products as $product)
                     <tr>
                         <td>
-                            <img class="img-brand" src="{{asset('img/products/'.$product->url_image)}}" alt="{{$product->name}}">
+                            <img class="img-brand" src="{{asset('storage/'.$product->url_image)}}" alt="{{$product->name}}">
                         </td>
                         <td>{{$product->name}}</td>
-                        <td>{{$product->size}}</td>
+                        <td>
+                            @switch($product->size)
+                                @case(1)    
+                                    Talla S
+                                    @break
+                                @case(2)    
+                                    Talla M
+                                    @break
+                                @case(3)    
+                                    Talla L
+                                    @break
+                            @endswitch
+                        </td>
                         <td>{{$product->observations}}</td>
-                        <td>{{$product->marca}}</td>
+                        <td>{{$product->brand->name}}</td>
                         <td>{{$product->stock}}</td>
                         <td>{{$product->boarding_date}}</td>
                         <td>
-                        <a href="" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                        <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                        <a href="{{route('products.edit',$product->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-danger" onclick="deleteProduct({{$product->id}},'{{$product->name}}')"><i class="fa fa-trash"></i></a>
+                        <form id="delete-{{$product->id}}" method="POST" action="{{route('products.destroy', $product->id)}}">
+                            @csrf
+                            @method('delete')
+                        </form>
                         </td>
                     </tr>
                 @endforeach    
@@ -51,11 +67,28 @@
 @section('aditionals_scripts')
 <script>
     $(document).ready(function() {
-        $('#brands').DataTable(
+        $('#products').DataTable(
             {
                 "autoWidth": true
             }
         );
     } );
+
+    function deleteProduct(id, name) {
+        var form = $('#delete-'+id)
+        Swal.fire({
+            title: 'Eliminar Producto',
+            text: "¿Seguro que desea eliminar: " + name + "?.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Eliminar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                form.submit()
+            } 
+        })
+    }
 </script>
 @endsection
