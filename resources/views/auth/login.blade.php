@@ -1,9 +1,9 @@
-@extends('layouts.auth.login')
+@extends('layouts.store')
 @section('sub_title', 'Login')
 @section('content')
 <div class="login-box">
   <div class="login-logo">
-    <a href=""><b>Admin</b>LTE</a>
+  <img src="{{asset('/img/logo-tiendapp.png')}}" alt="logo tiendApp" class="logo-app">
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">

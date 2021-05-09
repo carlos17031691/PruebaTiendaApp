@@ -1,9 +1,9 @@
-@extends('layouts.auth.register')
+@extends('layouts.store')
 @section('sub_title', 'Registro')
 @section('content')
 <div class="register-box">
     <div class="register-logo">
-        <a href=""><b>Admin</b>LTE</a>
+        <img src="{{asset('/img/logo-tiendapp.png')}}" alt="logo tiendApp" class="logo-app">
     </div>
 
     <div class="register-box-body">
