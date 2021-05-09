@@ -34,6 +34,14 @@ Debe entregarse los archivos fuente (html, js, css, etc.), puede hacerse mediant
 
 En caso de hacer uso de alguna librería o algún desarrollo previo, por favor comunicarlo e indicarn qué ayuda le prestó en el momento de la programación y la forma en que lo asoció a esta prueba.
 
+# Dependencias utilizadas
+
+* Framework PHP Laravel 8 como core del proyecto: https://laravel.com/
+* Manejo de estilos y DOM se uso Bootstrap y jQuery: https://getbootstrap.com/ https://jquery.com/
+* Plantilla administrativa AdminLte: https://adminlte.io/
+* Plugin para manejo de tablas Datatable.net: https://datatables.net/
+* Plugin para manejo de alertas SweetAlert2: https://sweetalert2.github.io/
+
 # Instalacion:
 
 * Clonar el repositorio
