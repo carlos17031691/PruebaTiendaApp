@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('observations');
             $table->integer('stock');
             $table->date('boarding_date');
-            $table->string('url_image');
+            $table->string('url_image')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

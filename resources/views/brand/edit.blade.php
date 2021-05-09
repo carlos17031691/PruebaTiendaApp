@@ -24,7 +24,11 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="name">Imagen actual</label>
-                                    <img class="img-brand-edit form-control" src="{{asset('storage/'.$brand->url_image)}}" alt="{{$brand->name}}">
+                                    @if($brand->url_image)
+                                        <img class="img-brand" src="{{asset('storage/'.$brand->url_image)}}" alt="{{$brand->name}}">
+                                    @else
+                                        <img class="img-brand" src="{{asset('img/imagen_no_disponible.png')}}" alt="{{$brand->name}}">
+                                    @endif
                                 </div>
                                 <div class="form-group">
                                     <label for="name">Cambiar imagen de la marca</label>

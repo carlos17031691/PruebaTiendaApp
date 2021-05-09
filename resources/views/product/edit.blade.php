@@ -66,7 +66,11 @@
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label for="name">Imagen actual</label>
-                                    <img class="img-brand-edit form-control" src="{{asset('storage/'.$product->url_image)}}" alt="{{$product->name}}">
+                                    @if($product->url_image)
+                                        <img class="img-brand" src="{{asset('storage/'.$product->url_image)}}" alt="{{$product->name}}">
+                                    @else
+                                        <img class="img-brand" src="{{asset('img/imagen_no_disponible.png')}}" alt="{{$product->name}}">
+                                    @endif
                                 </div>
                                 <div class="form-group">
                                     <label for="name">Imagen del producto</label>

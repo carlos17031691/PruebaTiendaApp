@@ -37,17 +37,70 @@ En caso de hacer uso de alguna librería o algún desarrollo previo, por favor c
 # Instalacion:
 
 * Clonar el repositorio
+
     ![Screenshot](screenshots/repositorio1.png)
+    ![Screenshot](screenshots/repositorio2.png)
+    ![Screenshot](screenshots/repositorio3.png)
+
 * Ejecutar composer para las dependecias de php: composer install
+
+    ![Screenshot](screenshots/composer1.png)
+    ![Screenshot](screenshots/composer2.png)
 * Configurar el archivo .env con la configuracion de la base de datos
+
+    ![Screenshot](screenshots/env.png)
+
 * Ejecutar las migraciones: php artisan migrate
+
+    ![Screenshot](screenshots/migrate.png)
+
 * Configurar el App Key: php artisan key:generate
+
+    ![Screenshot](screenshots/key.png)
+
+* Configurar el link simbolico para el almacenamiento de imagenes: php artisan storage:link
+
+    ![Screenshot](screenshots/storage.png)
+
 * Correr el servidor local: php artisan server
 
+    ![Screenshot](screenshots/serve.png)
+
+
 # Uso del Aplicativo
+
+* Ingresar a la url del servidor: http://localhost:8000
+
+    ![Screenshot](screenshots/tienda.png)
+
 * Registrar un usuario
+
+    ![Screenshot](screenshots/registro.png)
+
 * Iniciar Sesión con el usuario registrado anteriormente para acceder al panel adminstrativo
+
+    ![Screenshot](screenshots/inicio.png)
+
+* Panel administrativo
+
+    ![Screenshot](screenshots/panel.png)
+
 * Registrar las marcas deseadas (Menu de Marcas)
+
+    ![Screenshot](screenshots/marcas1.png)
+    ![Screenshot](screenshots/marcas2.png)
+    ![Screenshot](screenshots/marcas3.png)
+
 * Registrar los productos deseados (Menu de Productos)
+
+    ![Screenshot](screenshots/producto1.png)
+    ![Screenshot](screenshots/producto2.png)
+    ![Screenshot](screenshots/producto3.png)
+
 * Navegar hasta la pagina principal (Tienda)(Click Icono de "TiendApp")
+
+    ![Screenshot](screenshots/tienda1.png)
+
 * Verificar los Productos registrados...
+
+    ![Screenshot](screenshots/tienda2.png)
