@@ -45,7 +45,7 @@
         <div class="row">
             <!-- /.col -->
             
-            <button type="submit" class="btn btn-primary">Registrarse</button>
+            <button type="submit" class="btn btn-primary btn-block btn-flat">Registrarse</button>
             
             <!-- /.col -->
         </div>
