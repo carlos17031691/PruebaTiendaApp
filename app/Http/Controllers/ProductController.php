@@ -29,6 +29,10 @@ class ProductController extends Controller
     public function create()
     {
         $brands = Brand::All();
+        if(count($brands) < 1){
+            Alert::warning('Producto', 'No existen marcas registradas, por favor registre al menos una marca');
+            return redirect()->route('products.index');
+        }
         return view('product.create', compact('brands'));
     }
 

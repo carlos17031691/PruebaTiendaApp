@@ -7,7 +7,7 @@
 </div>
 <div class="row">
   @foreach($products as $product)
-    <div class="col-sm-4">
+    <div class="col-sm-3">
       <div class="box box-widget widget-user">
         <!-- Add the bg color to the header using any of the bg-* classes -->
         <div class="widget-user-header bg-aqua-active">
