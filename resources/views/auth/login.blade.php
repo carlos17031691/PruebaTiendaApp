@@ -3,7 +3,9 @@
 @section('content')
 <div class="login-box">
   <div class="login-logo">
-  <img src="{{asset('/img/logo-tiendapp.png')}}" alt="logo tiendApp" class="logo-app">
+    <a href="{{route('store')}}">
+      <img src="{{asset('/img/logo-tiendapp.png')}}" alt="logo tiendApp" class="logo-app">
+    </a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">

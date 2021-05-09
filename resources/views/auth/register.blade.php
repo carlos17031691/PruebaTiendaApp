@@ -2,10 +2,11 @@
 @section('sub_title', 'Registro')
 @section('content')
 <div class="register-box">
-    <div class="register-logo">
-        <img src="{{asset('/img/logo-tiendapp.png')}}" alt="logo tiendApp" class="logo-app">
-    </div>
-
+<div class="login-logo">
+    <a href="{{route('store')}}">
+      <img src="{{asset('/img/logo-tiendapp.png')}}" alt="logo tiendApp" class="logo-app">
+    </a>
+  </div>
     <div class="register-box-body">
         <p class="login-box-msg">Registro</p>
 

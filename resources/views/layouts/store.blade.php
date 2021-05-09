@@ -51,8 +51,8 @@
         @include('sweetalert::alert')
         <header class="main-header">
             <!-- Logo -->
-            <a href="" class="logo">
-                <img src="/img/logo-tiendapp.png" alt="logo tiendApp" class="logo-app">
+            <a href="{{route('store')}}" class="logo">
+                <img src="{{asset('/img/logo-tiendapp.png')}}" alt="logo tiendApp" class="logo-app">
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
