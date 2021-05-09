@@ -84,6 +84,7 @@ En caso de hacer uso de alguna librería o algún desarrollo previo, por favor c
 * Panel administrativo
 
     ![Screenshot](screenshots/panel.png)
+    ![Screenshot](screenshots/panel2.png)
 
 * Registrar las marcas deseadas (Menu de Marcas)
 
