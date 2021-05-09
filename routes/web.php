@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Ruta principal
+Route::get('/', [App\Http\Controllers\StoreController::class, 'index'])->name('store');
 
 Route::middleware(['auth'])->group(function () {
     //Rutas generales

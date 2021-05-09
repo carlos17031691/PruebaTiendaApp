@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Brand;
+use App\Models\Product;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $brands = count(Brand::all());
+        $products = count(Product::all());
+        $users = count(User::all());
+        $visitors = 0;
+        return view('home', compact('brands','products','users','visitors'));
     }
 }
