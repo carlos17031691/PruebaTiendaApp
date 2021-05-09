@@ -37,7 +37,17 @@ En caso de hacer uso de alguna librería o algún desarrollo previo, por favor c
 # Instalacion:
 
 * Clonar el repositorio
+    ![Screenshot](screenshots/repositorio1.png)
+* Ejecutar composer para las dependecias de php: composer install
 * Configurar el archivo .env con la configuracion de la base de datos
 * Ejecutar las migraciones: php artisan migrate
-* Ejecutar composer para las dependecias de php: composer install
-* Ejecutar NPM para las dependencias de Javascrypt: npm install && npm run dev
+* Configurar el App Key: php artisan key:generate
+* Correr el servidor local: php artisan server
+
+# Uso del Aplicativo
+* Registrar un usuario
+* Iniciar Sesión con el usuario registrado anteriormente para acceder al panel adminstrativo
+* Registrar las marcas deseadas (Menu de Marcas)
+* Registrar los productos deseados (Menu de Productos)
+* Navegar hasta la pagina principal (Tienda)(Click Icono de "TiendApp")
+* Verificar los Productos registrados...

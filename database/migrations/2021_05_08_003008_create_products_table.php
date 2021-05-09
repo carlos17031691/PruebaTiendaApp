@@ -24,11 +24,6 @@ class CreateProductsTable extends Migration
             $table->string('url_image');
             $table->softDeletes();
             $table->timestamps();
-
-            $table->foreign('brand_id')
-                  ->references('id')
-                  ->on('brands')
-                  ->onDelete('cascade');
         });
     }
 
